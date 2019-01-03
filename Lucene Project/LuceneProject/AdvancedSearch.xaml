@@ -1,0 +1,64 @@
+﻿<UserControl x:Class="LuceneProject.AdvancedSearch"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+             mc:Ignorable="d" 
+             d:DesignHeight="590.91" d:DesignWidth="933.637">
+    <Grid Style="{StaticResource ContentRoot}">
+        <StackPanel MinWidth="200" >
+            <StackPanel MinWidth="200" Orientation="Horizontal">
+                <Image Source="Images/Folder-Find-01.png" Height="38" VerticalAlignment="Top"/>
+                <TextBlock Text="  Advanced Search." Style="{StaticResource Heading2}" FontSize="20" Height="45" Width="255" />
+
+            </StackPanel>
+            <TextBlock Text="Enter the search terms:" FontSize="16" Height="21" />
+            <StackPanel MinWidth="200" Orientation="Horizontal" Height="50">
+                <TextBox MaxLines="8" MaxLength="0" AcceptsReturn="True" x:Name="tbxTerms" Height="23" TextWrapping="Wrap" Width="350" HorizontalAlignment="Left" Margin="0 0 10 0" VerticalAlignment="Center"/>
+
+                <Button x:Name="btnSearch" Content="Search" Width="98" Height="25"  Margin="0 0 10 0" VerticalAlignment="Center"/>
+                <TextBlock Text="Search In:" FontSize="16" Margin="0 0 5 0"  Height="25" VerticalAlignment="Center"/>
+                <CheckBox x:Name="ckTitle" Content="Title" IsChecked="True" Margin="0 0 5 0" FontSize="16" VerticalAlignment="Center"/>
+                <CheckBox x:Name="ckSummary" Content="Summary" IsChecked="True" Margin="0 0 5 0" FontSize="16" VerticalAlignment="Center"/>
+                <CheckBox x:Name="ckAuthor" Content="Author" IsChecked="True" Margin="0 0 5 0" FontSize="16" VerticalAlignment="Center"/>
+            </StackPanel>
+
+            <StackPanel MinWidth="200" >
+                <StackPanel MinWidth="200" Orientation="Horizontal" >
+                    <Image Source="Images/Document-01.png" Height="21"  VerticalAlignment="Center" Margin="0 0 2 0"/>
+                    <TextBlock Text="Results" Style="{StaticResource Heading2}" FontSize="14" Height="21" Width="Auto" FontWeight="Normal" Margin="0 0 10 0"/>
+                    <Image Source="Images/View-News.png" Height="21"  VerticalAlignment="Center" Margin="0 0 2 0"/>
+                    <TextBlock Text="Documents Found: 0" Name="DocumentsReturned" Style="{StaticResource Heading2}" FontSize="14" Height="21" Width="Auto" FontWeight="Normal" Margin="0 0 10 0"/>
+                    <Image Source="Images/Stop-Clock.png" Height="21"  VerticalAlignment="Center" Margin="0 0 2 0"/>
+                    <TextBlock Name="TimeElapsed" Text="Time: 0 ms" Style="{StaticResource Heading2}" FontSize="14" Height="21" Width="Auto" FontWeight="Normal" />
+
+                </StackPanel>
+                <ScrollViewer>
+                    <StackPanel >
+                        <DataGrid  Visibility="Collapsed" HorizontalAlignment="Left"  AlternatingRowBackground="LightBlue" AutoGenerateColumns="False"
+                        Name="DatagridResults" VerticalAlignment="Center" Width="800" Height="400" >
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Binding="{Binding Id}" Header="ID"  />
+                                <DataGridTextColumn Binding="{Binding Title}" Header="Document Title"/>
+                                <DataGridTextColumn Binding="{Binding Score}" Header="Score"/>
+                                <DataGridTemplateColumn>
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Button Height="25"  HorizontalAlignment="right" VerticalAlignment="Center" Click="ViewResultsButtonClick" CommandParameter="{Binding Id}">View Article</Button>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                        <StackPanel Orientation="Horizontal" Name="NoResults" Visibility="Collapsed" Margin="0 30 0 0">
+                            <Image Source="Images/Data-Error.png" Height="21"  VerticalAlignment="Center" Margin="0 0 2 0"/>
+                            <TextBlock  Text="No Results Found" FontSize="16"></TextBlock>
+                        </StackPanel>
+                    </StackPanel>
+                </ScrollViewer>
+            </StackPanel>
+        </StackPanel>
+
+    </Grid>
+</UserControl>

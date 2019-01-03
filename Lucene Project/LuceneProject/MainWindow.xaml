@@ -1,0 +1,25 @@
+﻿<mui:ModernWindow x:Class="LuceneProject.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+        LogoData="M2.9405556,36.27997L19.353662,36.27997C19.613712,40.570866 21.184009,44.681723 23.964536,48.082432 24.764687,49.062635 25.654855,49.952822 26.595033,50.762989L2.9405556,50.762989C1.3202496,50.762989,0,49.442715,0,47.822376L0,39.220583C0,37.590244,1.3202496,36.27997,2.9405556,36.27997z M40.07915,26.039505C35.567814,26.037608 31.697568,29.460962 31.228801,34.03541 30.738794,38.924829 34.298976,43.284515 39.189158,43.784468 44.07922,44.27441 48.429468,40.724705 48.929485,35.825276 49.429502,30.945621 45.879332,26.576171 40.989147,26.086228 40.683511,26.054981 40.379906,26.039631 40.07915,26.039505z M40.001466,20.029883C40.506362,20.029675 41.016065,20.054951 41.529205,20.106826 49.749458,20.93658 55.729645,28.275957 54.89966,36.495132 54.609612,39.405008 53.489578,42.024628 51.809589,44.174322L61.82983,56.083324C63.099895,57.583179 62.899937,59.832962 61.399883,61.09285 59.889824,62.362747 57.649757,62.162815 56.379692,60.66296L46.229319,48.584051C43.899282,49.654016 41.249166,50.133951 38.509082,49.863956 30.298838,49.023951 24.308641,41.694582 25.148636,33.475406 25.936131,25.769929 32.428023,20.033003 40.001466,20.029883z M2.9403095,17.98002L28.162965,17.98002C23.482472,21.2416,20.202127,26.404101,19.462048,32.467039L2.9403095,32.467039C1.3201389,32.467039,0,31.146399,0,29.525614L0,20.921445C0,19.290654,1.3201389,17.980019,2.9403095,17.98002z M2.9399338,0L44.119007,0C45.73897,0,47.058941,1.3100014,47.058941,2.9400024L47.058941,11.550008C47.058941,13.170009,45.73897,14.490009,44.119007,14.490009L2.9399338,14.490009C1.3199692,14.490009,0,13.170009,0,11.550008L0,2.9400024C0,1.3100014,1.3199692,0,2.9399338,0z" 
+        Title="Lucene Project 2013-14" Height="700" Width="900" ContentSource="/BuildIndex.xaml" Icon="Images/Data-Find.png" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    
+    <mui:ModernWindow.MenuLinkGroups>
+        <mui:LinkGroup DisplayName="Index" >
+            <mui:LinkGroup.Links>
+                <mui:Link DisplayName="Build Index" Source="/BuildIndex.xaml" />
+            </mui:LinkGroup.Links>
+        </mui:LinkGroup>
+        <mui:LinkGroup DisplayName="Simple Search" >
+            <mui:LinkGroup.Links>
+                <mui:Link DisplayName="Simple Search" Source="/SimpleSearch.xaml"/>
+            </mui:LinkGroup.Links>
+        </mui:LinkGroup>
+        <mui:LinkGroup DisplayName="Advanced Search" >
+            <mui:LinkGroup.Links>
+                <mui:Link DisplayName="Advanced Search" Source="/AdvancedSearch.xaml"/>
+            </mui:LinkGroup.Links>
+        </mui:LinkGroup>
+    </mui:ModernWindow.MenuLinkGroups>
+</mui:ModernWindow>
